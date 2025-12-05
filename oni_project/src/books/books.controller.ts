@@ -3,7 +3,6 @@ import { BooksService } from './books.service';
 import { Prisma } from '@prisma/client';
 import type { Request } from 'express';
 import { AuthService } from '../auth/auth.service';
-import { CookieToken } from 'src/utils/jwt';
 @Controller('books')
 export class BooksController {
     constructor(
