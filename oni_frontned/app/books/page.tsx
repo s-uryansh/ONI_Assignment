@@ -106,7 +106,8 @@ export default function BooksPage() {
   };
 
   const updateBook = async (id: number) => {
-    if (!user) { toast.error("Login required"); return; } // require login
+    console.log(user)
+    if (!user?.id) { toast.error("Login required"); return; } 
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_NEST_URL}/books/${id}`, {
         method: "PUT",
@@ -114,6 +115,7 @@ export default function BooksPage() {
         body: JSON.stringify(editForm)
       });
       const data = await res.json();
+      console.log(data)
       if (!res.ok) {
         toast.error(data.error || "Failed update");
         return;

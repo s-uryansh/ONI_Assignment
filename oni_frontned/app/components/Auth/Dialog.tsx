@@ -85,9 +85,9 @@ const handleSubmit = async (e: React.FormEvent) => {
       }
 
       toast.success('Signup and login successful!');
-      window.location.reload();
       onAuthSuccess(loginResult.user);
       onClose();
+      window.location.reload();
     } catch (err) {
       console.error('Signup/Login Error:', err);
       toast.error('Network error.');
@@ -107,6 +107,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         toast.success('Login successful!');
         onAuthSuccess(result.user);
         onClose();
+        window.location.reload();
       }
     } catch {
       toast.error('Network error.');
